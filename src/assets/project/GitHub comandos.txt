@@ -1,0 +1,24 @@
+en gitbash terminal
+$ git config --global user.name “usuarioGitHub”
+$ git config --global user.email “emailUsuarioGitHub” $ git config --list
+
+
+ya en el terminal normal para conectarlo con el repositorio (código obtenido al crear el repositorio)
+"ESTE ES EL MIO"
+
+echo "# ProgramacionWeb" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/anonima04/ProgramacionWeb.git
+git push -u origin main
+
+para ver el status
+git status
+para llevarlos al escenario
+git add .
+para llevarlos a la nube
+git commit -m "nombre que le va a poner"
+Para subirlo en lineal (al ejecutar el comando le debe aparecer los archivos de la carpeta en el repositorio)
+git push 

@@ -1,0 +1,247 @@
+/* ?This is where reusable styling of this template will be. 
+   !Will contain things like:
+   * Button styling
+   * Background color styling
+   * padding and margin
+*/
+/* --------------------------------------------------
+   Global Styles and Reset
+-------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* Para desplazamiento suave */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-color);
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+}
+
+html {
+  font-size: 100%;
+}
+
+/* --------------------------------------------------
+   Container and Reusable Styling
+-------------------------------------------------- */
+.container {
+  max-width: var(--width-medium);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+h1::selection,
+h2::selection {
+  color: #111;
+  background: var(--primary-color);
+}
+
+/* --------------------------------------------------
+   Buttons
+-------------------------------------------------- */
+.btn {
+  display: inline-block; /* Asegura que el botón se muestre como un bloque en línea */
+  padding: 10px 20px; /* Ajusta el tamaño del botón */
+  margin: 10px 0; /* Añade espacio arriba y abajo del botón */
+  border: none; /* Quita el borde por defecto */
+  border-radius: 5px; /* Redondea las esquinas del botón */
+  font-size: 16px; /* Ajusta el tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a mano cuando se pase sobre el botón */
+  text-align: center; /* Alinea el texto en el centro */
+  background-color: #007bff; /* Color de fondo del botón */
+  color: #fff; /* Color del texto del botón */
+  transition: background-color 0.3s ease; /* Agrega una transición suave al cambiar el color de fondo */
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #000000;
+}
+
+.btn-secondary {
+  margin: 5px 0;
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
+}
+
+/* add hover to resume button */
+.btn-primary:hover {
+  background: var(--secondary-color);
+}
+
+/* Dark mode toggle */
+#switch {
+  display: none;
+}
+
+/* --------------------------------------------------
+   Dark Mode Toggle
+-------------------------------------------------- */
+#switch {
+  display: none;
+}
+
+.toggle-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle-icons > img {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 30px;
+}
+
+.moon {
+  transform: rotate(10deg);
+}
+
+#switch:checked + .toggle-icons .moon {
+  transform: rotate(250deg);
+}
+
+#switch:checked + .toggle-icons .sun {
+  transform: rotate(100deg);
+}
+
+/* --------------------------------------------------
+   Header Container
+-------------------------------------------------- */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+  padding: 5rem;
+}
+
+.header-container > div {
+  margin-top: 1rem;
+}
+
+.content-text {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.content-text h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  transition: 0.2s ease-in-out;
+}
+
+.content-text p {
+  padding: 0.5rem;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* --------------------------------------------------
+   Project Cards
+-------------------------------------------------- */
+
+/* Estilos comunes para todas las tarjetas */
+.card {
+  padding: 1rem;
+  background: var(--card-background);
+  color: #ffffff;
+  border-radius: 5px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+  background-size: cover; /* Ajusta la imagen al tamaño del contenedor */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/* Estilos para enlaces dentro de tarjetas */
+.card a {
+  color: #ffffff;
+  transition: 0.25s ease-in-out;
+  font-size: 1.1rem;
+  margin-right: 0.3rem;
+}
+
+.card a:hover {
+  color: var(--primary-color);
+}
+
+/* Efecto hover para todas las tarjetas */
+.card:hover {
+  box-shadow: inset 0 100px 1000px 10px rgba(0, 0, 0, 0.8);
+}
+
+/* Específicos para tarjetas de proyecto */
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+/* Específicos para tarjetas de servicio */
+.service-card:hover .service-info {
+  opacity: 1;
+}
+
+/* Project Images */
+
+/* Project 1 */
+.project .card:nth-child(1) {
+  background-image: url('../assets/project/capsule.jpg');
+}
+
+/* Project 2 */
+.project .card:nth-child(2) {
+  background-image: url('../assets/project/Daylio.jpg');
+}
+
+/* Project 3 */
+.project .card:nth-child(3) {
+  background-image: url('../assets/project/fo.png');
+}
+
+/* Project 4 */
+.project .card:nth-child(4) {
+  background-image: url('../assets/project/AD.png');
+}
+
+/* Project 5 */
+.project .card:nth-child(5) {
+  background-image: url('../assets/project/grimvalor.jpg');
+}
+
+/* Project 6 */
+.project .card:nth-child(6) {
+  background-image: url('../assets/project/pzizz.png');
+}
+
+/* --------------------------------------------------
+   Media Queries
+-------------------------------------------------- */
+@media (max-width: 768px) {
+  .header-container {
+    margin-top: 7rem;
+    text-align: center;
+  }
+
+  .content-text h2 {
+    font-size: 2.5rem;
+  }
+}

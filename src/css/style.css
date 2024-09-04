@@ -1,0 +1,600 @@
+/* --------------------------------------------------
+   Imports
+-------------------------------------------------- */
+@import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* --------------------------------------------------
+   Global Styles and Reset
+-------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth; /* Para desplazamiento suave */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-color);
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------------
+   Variables
+-------------------------------------------------- */
+:root {
+  /* Colors */
+  --primary-color: #ffcd42;
+  --secondary-color: #ffd35c;
+  --bg-primary: #ffffff;
+  --text-color: #222222;
+  --text-color-two: #ffffff;
+  --bg-secondary: #000000;
+  --card-background: #f4f4f4;
+  --bg-secondary-two: #111111;
+
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+  /* Font Weight */
+  --weight-small: 400;
+  --weight-semibold: 600;
+  --weight-bold: 800;
+
+  /* Max width */
+  --width-small: 600px;
+  --width-medium: 1100px;
+  --width-large: 1300px;
+}
+
+/* --------------------------------------------------
+   Dark Theme Variables
+-------------------------------------------------- */
+[data-theme="dark"] {
+  --primary-color: #ffcd42;
+  --secondary-color: #ffd35c;
+  --bg-primary: #000000;
+  --text-color: #ffffff;
+  --text-color-two: #222222;
+  --bg-secondary: #ffffff;
+  --card-background: #111111;
+  --bg-secondary-two: #f4f4f4;
+  --shadow: 0 2px 10px rgba(95, 95, 95, 0.2);
+}
+
+/* --------------------------------------------------
+   Navbar
+-------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.navbar #logo img {
+  display: block;
+  width: 40px;
+}
+
+.navbar .nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-link {
+  margin: 0 1rem;
+  font-size: 0.8rem;
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: var(--text-hover-color);
+}
+
+.navbar .btn {
+  margin-right: 1.5rem;
+}
+
+.fas.fa-arrow-right {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 23px;
+  height: 3px;
+  margin: 4px auto;
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  background-color: var(--bg-secondary);
+}
+
+/* Menu Toggle for Mobile */
+.nav-menu.active {
+  display: flex; /* Show menu when active */
+  flex-direction: column; /* Stack items vertically */
+  position: absolute;
+  top: 80px; /* Position menu below the navbar */
+  right: 0;
+  background: var(--bg-primary);
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.nav-menu li {
+  margin: 0.5rem 0; /* Space between menu items */
+}
+
+/* --------------------------------------------------
+   Hero Section
+-------------------------------------------------- */
+#hero {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.profile-image {
+  width: 150px;
+  border-radius: 50%;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+/* --------------------------------------------------
+   About Section
+-------------------------------------------------- */
+.about-container {
+  padding: 60px 0;
+}
+
+.about-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 70px;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 40%;
+  height: auto;
+}
+
+.about-container .about-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-container .about-image {
+  width: 300px; 
+  height: 300px; 
+  object-fit: cover; 
+}
+
+.about-container .about-details {
+  max-width: 600px; 
+  margin-left: 20px;
+}
+
+.about-details {
+  flex: 2;
+  max-width: 600px; /* Adjust the width as needed */
+}
+
+.about-details h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-details p {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.about-details .btn {
+  margin-top: 20px;
+  display: block;
+  width: 200px; /* Adjust width as needed */
+  text-align: center;
+}
+
+/* --------------------------------------------------
+   Projects Section
+-------------------------------------------------- */
+#projects {
+  padding: 60px 2rem; /* Add horizontal padding */
+  max-width: 1200px; /* Increase container width */
+  margin: 0 auto; /* Center the container */
+}
+
+#projects .content-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+#projects h2 {
+  font-size: 2.5rem; /* Increase heading size */
+  margin-bottom: 10px;
+}
+
+#projects p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increase card size */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 350px; /* Set card height */
+  position: relative; /* Position relative to allow absolute positioning of text */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  opacity: 0;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  width: 100%; /* Ensure the project-info takes the full width of the card */
+}
+
+.project-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 10px; /* Adjusted from 160px to 10px */
+  left: 10px;
+}
+
+.card .project-bio p {
+  font-size: 0.83rem;
+}
+
+.card .project-bio h3 {
+  font-size: 0.9rem;
+}
+
+/* Button */
+.btn-secondary {
+  display: inline-block;
+  padding: 0.75rem 1.9rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  background-color: var(--bg-secondary);
+  color: var(--bg-primary);
+  margin: 2rem auto; /* Center the button horizontally */
+  text-align: center; /* Center text inside the button */
+}
+
+/* --------------------------------------------------
+   Services Section
+-------------------------------------------------- */
+.service-container {
+  padding: 60px 2rem; /* Add horizontal padding */
+  max-width: 1200px; /* Increase container width */
+  margin: 0 auto; /* Center the container */
+}
+
+.service-container .content-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.service-container h2 {
+  font-size: 2.5rem; /* Increase heading size */
+  margin-bottom: 10px;
+}
+
+.service-container p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.service {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increase card size */
+  gap: 20px; /* Space between cards */
+  justify-content: center; /* Center cards */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 350px; /* Set card height */
+  position: relative; /* Position relative to allow absolute positioning of text */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%; /* Full height of card */
+  justify-content: center; /* Center content vertically */
+}
+
+.service-icon {
+  font-size: 4rem; /* Increase icon size */
+  color: #007bff;
+  margin-bottom: 15px;
+  margin-top: auto; /* Push icon to the top of the service-info */
+}
+
+.service-bio {
+  margin-top: 15px; /* Add margin on top of bio section */
+}
+
+.service-bio h3 {
+  font-size: 1.7rem; /* Increase heading size */
+  margin-bottom: 10px;
+}
+
+.service-bio p {
+  font-size: 1.1rem; /* Increase text size */
+  color: #777;
+}
+
+/* --------------------------------------------------
+   Contact Section
+-------------------------------------------------- */
+.contact-container {
+  padding: 60px 0;
+  max-width: 1200px; /* Adjust container width */
+  margin: 0 auto; /* Center the container */
+}
+
+.contact-container .content-text {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.contact-container h2 {
+  font-size: 2.5rem; /* Increase heading size */
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px; /* Space between columns */
+  justify-content: center;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 500px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form input[type="submit"] {
+  background-color: var(--primary-color);
+  color: var(--text-color-two);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.contact-form input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+}
+
+
+/* --------------------------------------------------
+   Footer Section
+-------------------------------------------------- */
+
+/* CSS para el pie de página */
+#footer {
+  background-color: var(--footer-bg-color);
+  color: var(--footer-text-color);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Enlaces de correo y texto del pie de página */
+#footer a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+}
+
+#footer a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de los iconos sociales */
+#footer .social a img {
+  filter: invert(100%); /* Invierte los colores de los iconos para coincidir con el texto */
+  margin: 0 10px;
+  width: 24px; /* Ajusta el tamaño de los iconos si es necesario */
+  height: 24px;
+}
+
+#footer .social a:hover img {
+  filter: invert(75%); /* Cambia la intensidad en hover, si es necesario */
+}
+
+/* --------------------------------------------------
+   Media Queries
+-------------------------------------------------- */
+@media only screen and (max-width: 1200px) {
+  .about-info {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-image,
+  .about-details {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .service-container {
+    padding: 40px 0;
+  }
+
+  .service-container h2 {
+    font-size: 2.2rem;
+  }
+
+  .service-container p {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    height: 320px; /* Adjust card height for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .service {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Smaller card size */
+  }
+
+  .navbar .nav-menu {
+    display: none; /* Hide menu on smaller screens */
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .navbar .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    padding: 1rem 0;
+  }
+
+  .navbar .nav-link {
+    margin: 0.5rem 0;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .contact-container .content-text {
+    padding: 0 1rem;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px; /* Adjust space between columns */
+  }
+}
