@@ -1,9 +1,3 @@
-/* ?This is where reusable styling of this template will be. 
-   !Will contain things like:
-   * Button styling
-   * Background color styling
-   * padding and margin
-*/
 /* --------------------------------------------------
    Global Styles and Reset
 -------------------------------------------------- */
@@ -39,6 +33,10 @@ html {
   font-size: 100%;
 }
 
+textarea {
+  resize: none; /* Evita que el usuario pueda cambiar el tamaño del textarea */
+}
+
 /* --------------------------------------------------
    Container and Reusable Styling
 -------------------------------------------------- */
@@ -58,17 +56,17 @@ h2::selection {
    Buttons
 -------------------------------------------------- */
 .btn {
-  display: inline-block; /* Asegura que el botón se muestre como un bloque en línea */
-  padding: 10px 20px; /* Ajusta el tamaño del botón */
-  margin: 10px 0; /* Añade espacio arriba y abajo del botón */
-  border: none; /* Quita el borde por defecto */
-  border-radius: 5px; /* Redondea las esquinas del botón */
-  font-size: 16px; /* Ajusta el tamaño de la fuente */
-  cursor: pointer; /* Cambia el cursor a mano cuando se pase sobre el botón */
-  text-align: center; /* Alinea el texto en el centro */
-  background-color: #007bff; /* Color de fondo del botón */
-  color: #fff; /* Color del texto del botón */
-  transition: background-color 0.3s ease; /* Agrega una transición suave al cambiar el color de fondo */
+  display: inline-block; 
+  padding: 10px 20px; 
+  margin: 10px 0; 
+  border: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer; 
+  text-align: center; 
+  background-color: #007bff; 
+  color: #fff; 
+  transition: background-color 0.3s ease; 
 }
 
 .btn-primary {
@@ -230,18 +228,4 @@ h2::selection {
 /* Project 6 */
 .project .card:nth-child(6) {
   background-image: url('../assets/project/pzizz.png');
-}
-
-/* --------------------------------------------------
-   Media Queries
--------------------------------------------------- */
-@media (max-width: 768px) {
-  .header-container {
-    margin-top: 7rem;
-    text-align: center;
-  }
-
-  .content-text h2 {
-    font-size: 2.5rem;
-  }
 }

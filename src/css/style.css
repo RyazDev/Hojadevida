@@ -157,10 +157,10 @@ html {
 
 /* Menu Toggle for Mobile */
 .nav-menu.active {
-  display: flex; /* Show menu when active */
-  flex-direction: column; /* Stack items vertically */
+  display: flex; 
+  flex-direction: column; 
   position: absolute;
-  top: 80px; /* Position menu below the navbar */
+  top: 80px; 
   right: 0;
   background: var(--bg-primary);
   width: 100%;
@@ -251,18 +251,66 @@ html {
 
 .about-details .btn {
   margin-top: 20px;
-  display: block;
-  width: 200px; /* Adjust width as needed */
-  text-align: center;
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--bg-secondary); /* Color amarillo */
+  color: var(color-text); /* Color del texto */
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
+
+/* Estilos para las habilidades */
+.about-skills {
+  margin-top: 40px; /* Espacio superior para separar del botón de descarga */
+}
+
+.about-skills h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center; /* Centra el texto del encabezado de habilidades */
+  color: var(--color-text); 
+}
+
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los íconos se envuelvan en filas */
+  gap: 20px;
+  justify-content: center; /* Centra los íconos horizontalmente */
+}
+
+.skill {
+  text-align: center;
+  flex: 1 1 100px; /* Ajusta el tamaño base de los íconos */
+  max-width: 100px; /* Ancho máximo de los íconos */
+}
+
+.skill i {
+  font-size: 50px; /* Tamaño de los íconos */
+  color: var(--color-icon); /* Color por defecto de los íconos */
+}
+
+.skill p {
+  margin-top: 5px;
+  font-size: 16px;
+  color: var(--color-text); /* Color del texto de habilidades */
+}
+
+/* Colores específicos para los íconos */
+.skill i.fa-html5 { color: #e44b23; }
+.skill i.fa-css3-alt { color: #1572b6; }
+.skill i.fa-js { color: #f7df1e; }
+.skill i.fa-react { color: #61dafb; }
+.skill i.fa-python { color: #306998; }
+.skill i.fa-git { color: #f1502f; }
 
 /* --------------------------------------------------
    Projects Section
 -------------------------------------------------- */
 #projects {
-  padding: 60px 2rem; /* Add horizontal padding */
-  max-width: 1200px; /* Increase container width */
-  margin: 0 auto; /* Center the container */
+  padding: 60px 2rem; 
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 #projects .content-text {
@@ -271,20 +319,20 @@ html {
 }
 
 #projects h2 {
-  font-size: 2.5rem; /* Increase heading size */
+  font-size: 2.5rem; 
   margin-bottom: 10px;
 }
 
 #projects p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-icon); 
 }
 
 .project {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Increase card size */
-  gap: 20px; /* Space between cards */
-  justify-content: center; /* Center cards */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 20px; 
+  justify-content: center; 
 }
 
 .card {
@@ -298,9 +346,9 @@ html {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 350px; /* Set card height */
-  position: relative; /* Position relative to allow absolute positioning of text */
-  box-sizing: border-box; /* Include padding in the element's total width and height */
+  height: 350px; 
+  position: relative; 
+  box-sizing: border-box; 
 }
 
 .card:hover {
@@ -368,7 +416,7 @@ html {
 
 .service-container p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text);
 }
 
 .service {
@@ -449,7 +497,7 @@ html {
 
 .contact-container p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text);
 }
 
 .contact-content {
